@@ -4,12 +4,10 @@ import unittest
 
 class PythonBowlingGame(unittest.TestCase):
     # initialise game in setup, exit in tear town
-    def setUp(self): # oh dear all this over a capital U
+    def setUp(self):
         self.game = Game(1)
-        #print "SETTING UP!!!"
 
     def test_gutter_game(self):
-        #self.game = Game(1) # ok works here, why not in setup!?!?!?
         self.roll_many(20, 0)
         self.assertEqual(0, self.game.score()[0])
 
@@ -24,7 +22,6 @@ class PythonBowlingGame(unittest.TestCase):
         self.roll_many(17,0)
         self.assertEqual(16, self.game.score()[0])
 
-    # not sure if i'm supposed to include ALL tests to start off...
     def test_one_strike(self):
         self.game.roll(10)
         self.game.roll(3)
